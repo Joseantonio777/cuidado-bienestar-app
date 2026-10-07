@@ -44,7 +44,7 @@ class HerramientasScreen extends StatelessWidget {
     {
       'title': '5. Rutina de Desconexión Post-Turno',
       'subtitle': 'Checklist de 3 pasos para desenganchar',
-      'icon': Icons.do_not_disturb_on_outdoors_rounded,
+      'icon': Icons.door_back_door_rounded,
       'color': AppColors.emeraldGreen,
       'screen': DesconexionPostTurnoScreen(),
     },

@@ -100,7 +100,7 @@ class _DesconexionPostTurnoScreenState extends State<DesconexionPostTurnoScreen>
                     ),
                     child: Row(
                       children: [
-                        const Icon(Icons.do_not_disturb_on_outdoors_rounded,
+                        const Icon(Icons.door_back_door_rounded,
                             color: AppColors.emeraldGreen, size: 30),
                         const SizedBox(width: 14),
                         Expanded(

@@ -13,8 +13,8 @@ class BannerFrase extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           colors: [
-            Color(0F1E293B),
-            Color(0F0F172A),
+            Color(0xFF1E293B),
+            Color(0xFF0F172A),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
