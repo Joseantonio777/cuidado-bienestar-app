@@ -46,7 +46,6 @@ android {
 
     buildTypes {
         release {
-            // Signing with debug keys for easy testing APK build
             signingConfig signingConfigs.debug
             minifyEnabled false
             shrinkResources false
