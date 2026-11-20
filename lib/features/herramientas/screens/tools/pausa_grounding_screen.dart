@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/widgets/app_logo.dart';
 import '../../../sos/widgets/sos_modal_sheet.dart';
 
 class PausaGroundingScreen extends StatefulWidget {
@@ -66,7 +67,13 @@ class _PausaGroundingScreenState extends State<PausaGroundingScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pausa Grounding 5-4-3-2-1'),
+        title: const Row(
+          children: [
+            AppLogo(size: 28),
+            SizedBox(width: 8),
+            Flexible(child: Text('Pausa Grounding 5-4-3-2-1', overflow: TextOverflow.ellipsis)),
+          ],
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.sos_rounded, color: AppColors.sosRed),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../core/widgets/app_logo.dart';
 import '../widgets/banner_frase.dart';
 import '../widgets/senales_category_card.dart';
 import '../../sos/widgets/sos_modal_sheet.dart';
@@ -11,7 +12,13 @@ class SenalesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Reconoce las Señales'),
+        title: const Row(
+          children: [
+            AppLogo(size: 32),
+            SizedBox(width: 10),
+            Text('Reconoce las Señales'),
+          ],
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.sos_rounded, color: AppColors.sosRed),

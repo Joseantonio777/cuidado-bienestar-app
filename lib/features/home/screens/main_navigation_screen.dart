@@ -73,7 +73,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.spa_outlined),
-              activeIcon: Icon(Icons.spa_rounded, color: AppColors.levelYellow),
+              activeIcon: Icon(Icons.spa_rounded, color: AppColors.emeraldGreen),
               label: 'Herramientas',
             ),
           ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../../core/services/emergency_service.dart';
+import '../../../core/widgets/app_logo.dart';
 
 class SosModalSheet extends StatelessWidget {
   final bool isCrisisTriggered;
@@ -16,7 +17,7 @@ class SosModalSheet extends StatelessWidget {
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      barrierColor: Colors.black87,
+      barrierColor: Colors.black54,
       builder: (context) => SosModalSheet(isCrisisTriggered: isCrisisTriggered),
     );
   }
@@ -54,18 +55,7 @@ class SosModalSheet extends StatelessWidget {
               // Encabezado de la Modal
               Row(
                 children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: AppColors.sosRed.withOpacity(0.15),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(
-                      Icons.sos_rounded,
-                      color: AppColors.sosRed,
-                      size: 32,
-                    ),
-                  ),
+                  const AppLogo(size: 54, withShadow: true),
                   const SizedBox(width: 16),
                   Expanded(
                     child: Column(

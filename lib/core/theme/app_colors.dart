@@ -1,38 +1,46 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  // Paleta Principal (Slate & Dark Mode Salud Digital)
-  static const Color background = Color(0xFF0F172A); // Slate 900
-  static const Color surface = Color(0xFF1E293B);    // Slate 800
-  static const Color surfaceLight = Color(0xFF334155); // Slate 700
-  static const Color cardBorder = Color(0xFF475569);   // Slate 600
+  // Paleta Principal (Azul y Verde Suave - Bienestar y Calma)
+  static const Color background = Color(0xFFF0F7FA);       // Azul hielo muy suave
+  static const Color surface = Color(0xFFFFFFFF);          // Blanco puro limpio para tarjetas
+  static const Color surfaceLight = Color(0xFFD6ECEB);     // Azul-verde pastel suave para bordes/fondos
+  static const Color cardBorder = Color(0xFFC2E2E4);       // Borde celeste-menta suave
+  static const Color softBlueBg = Color(0xFFE1F1FA);       // Fondo azul pastel suave
+  static const Color softGreenBg = Color(0xFFE3F5EE);      // Fondo verde menta suave
 
-  // Acentuaciones
-  static const Color sereneBlue = Color(0xFF38BDF8);  // Sky 400
-  static const Color emeraldGreen = Color(0xFF10B981); // Emerald 500
-  static const Color sosRed = Color(0xFFEF4444);       // Red 500
-  static const Color sosRedDark = Color(0xFFB91C1C);   // Red 700
+  // Acentuaciones (Azul Sereno y Verde Suave)
+  static const Color sereneBlue = Color(0xFF2B7BB9);       // Azul sereno armónico con logo 505
+  static const Color emeraldGreen = Color(0xFF3DA58A);     // Verde salvia/menta suave
+  static const Color sosRed = Color(0xFFE53935);           // Rojo emergencia (cruz del logo)
+  static const Color sosRedDark = Color(0xFFB71C1C);       // Rojo emergencia profundo
 
-  // Texto
-  static const Color textPrimary = Color(0xFFF8FAFC);  // Slate 50
-  static const Color textSecondary = Color(0xFF94A3B8); // Slate 400
-  static const Color textMuted = Color(0xFF64748B);     // Slate 500
+  // Texto (Alto contraste legible sobre fondos claros)
+  static const Color textPrimary = Color(0xFF16324A);      // Azul marino pizarra profundo
+  static const Color textSecondary = Color(0xFF4A6572);    // Gris azulado medio
+  static const Color textMuted = Color(0xFF6B8594);        // Gris azulado suave
 
   // Semáforo de Evaluación
-  static const Color levelGreen = Color(0xFF10B981);  // 0 - 3 pts
-  static const Color levelYellow = Color(0xFFF59E0B); // 4 - 7 pts
-  static const Color levelOrange = Color(0xFFF97316); // 8 - 14 pts
-  static const Color levelRed = Color(0xFFEF4444);    // 15+ pts
+  static const Color levelGreen = Color(0xFF2E9E7B);       // 0 - 3 pts
+  static const Color levelYellow = Color(0xFFD98A00);      // 4 - 7 pts
+  static const Color levelOrange = Color(0xFFE66A15);      // 8 - 14 pts
+  static const Color levelRed = Color(0xFFE53935);         // 15+ pts
 
   // Sombras y Gradientes
   static const Gradient sosGradient = LinearGradient(
-    colors: [Color(0xFFEF4444), Color(0xFFB91C1C)],
+    colors: [Color(0xFFE53935), Color(0xFFB71C1C)],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
 
   static const Gradient sereneGradient = LinearGradient(
-    colors: [Color(0xFF38BDF8), Color(0xFF0284C7)],
+    colors: [Color(0xFF3A8DC4), Color(0xFF4EB299)],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  static const Gradient softBannerGradient = LinearGradient(
+    colors: [Color(0xFFDDF0FA), Color(0xFFE0F5EC)],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );

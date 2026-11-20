@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/constants/app_strings.dart';
+import '../../../core/widgets/app_logo.dart';
 
 class BannerFrase extends StatelessWidget {
   const BannerFrase({Key? key}) : super(key: key);
@@ -11,17 +12,10 @@ class BannerFrase extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          colors: [
-            Color(0xFF1E293B),
-            Color(0xFF0F172A),
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
+        gradient: AppColors.softBannerGradient,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: AppColors.sereneBlue.withOpacity(0.4),
+          color: AppColors.sereneBlue.withOpacity(0.3),
           width: 1.5,
         ),
         boxShadow: [
@@ -35,10 +29,17 @@ class BannerFrase extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const Icon(
-            Icons.format_quote_rounded,
-            color: AppColors.sereneBlue,
-            size: 36,
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              AppLogo(size: 32),
+              SizedBox(width: 8),
+              Icon(
+                Icons.format_quote_rounded,
+                color: AppColors.sereneBlue,
+                size: 34,
+              ),
+            ],
           ),
           const SizedBox(height: 8),
           Text(

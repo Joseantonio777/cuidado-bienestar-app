@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../core/widgets/app_logo.dart';
 import '../../sos/widgets/sos_modal_sheet.dart';
 
 import 'tools/respiracion_guiada_screen.dart';
@@ -61,7 +62,13 @@ class HerramientasScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Herramientas de Regulación'),
+        title: const Row(
+          children: [
+            AppLogo(size: 32),
+            SizedBox(width: 10),
+            Text('Herramientas de Regulación'),
+          ],
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.sos_rounded, color: AppColors.sosRed),

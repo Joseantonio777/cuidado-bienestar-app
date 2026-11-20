@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/widgets/app_logo.dart';
 import '../../../sos/widgets/sos_modal_sheet.dart';
 
 class RelajacionMuscularScreen extends StatefulWidget {
@@ -45,7 +46,13 @@ class _RelajacionMuscularScreenState extends State<RelajacionMuscularScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Relajación Muscular Progresiva'),
+        title: const Row(
+          children: [
+            AppLogo(size: 28),
+            SizedBox(width: 8),
+            Flexible(child: Text('Relajación Muscular Progresiva', overflow: TextOverflow.ellipsis)),
+          ],
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.sos_rounded, color: AppColors.sosRed),
@@ -233,7 +240,7 @@ class _RelajacionMuscularScreenState extends State<RelajacionMuscularScreen> {
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.sereneBlue,
-                    foregroundColor: Colors.black,
+                    foregroundColor: Colors.white,
                   ),
                   child: Text(_currentZone < _zones.length - 1 ? 'Siguiente Zona' : 'Finalizar'),
                 ),

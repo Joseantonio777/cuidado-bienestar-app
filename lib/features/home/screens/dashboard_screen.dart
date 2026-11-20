@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../../core/services/storage_service.dart';
+import '../../../core/widgets/app_logo.dart';
 import '../../autoevaluacion/models/assessment_result.dart';
 import '../../sos/widgets/sos_modal_sheet.dart';
 import '../../senales/widgets/banner_frase.dart';
@@ -44,18 +45,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
+        title: const Row(
           children: [
-            Container(
-              padding: const EdgeInsets.all(6),
-              decoration: const BoxDecoration(
-                color: AppColors.sereneBlue,
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(Icons.favorite_rounded, color: Colors.black, size: 20),
-            ),
-            const SizedBox(width: 10),
-            const Text(
+            AppLogo(size: 36, withShadow: true),
+            SizedBox(width: 10),
+            Text(
               AppStrings.appName,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
@@ -82,23 +76,20 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 width: double.infinity,
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFF1E293B), Color(0xFF334155)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
+                  gradient: AppColors.softBannerGradient,
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: AppColors.surfaceLight),
+                  border: Border.all(color: AppColors.cardBorder),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                           decoration: BoxDecoration(
-                            color: AppColors.emeraldGreen.withOpacity(0.2),
+                            color: AppColors.emeraldGreen.withOpacity(0.15),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: const Row(
@@ -117,6 +108,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             ],
                           ),
                         ),
+                        const AppLogo(size: 46, withShadow: true),
                       ],
                     ),
                     const SizedBox(height: 12),
@@ -144,11 +136,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   onPressed: () => widget.onNavigateToTab(1), // Tab Autoevaluación
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.sereneBlue,
-                    foregroundColor: Colors.black,
+                    foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
-                    elevation: 3,
+                    elevation: 2,
                   ),
                   icon: const Icon(Icons.timer_outlined, size: 26),
                   label: const Text(

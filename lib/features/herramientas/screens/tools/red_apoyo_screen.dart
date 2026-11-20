@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/constants/app_strings.dart';
+import '../../../../core/widgets/app_logo.dart';
 import '../../../sos/widgets/sos_modal_sheet.dart';
 
 class RedApoyoScreen extends StatelessWidget {
@@ -31,7 +32,13 @@ class RedApoyoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Red de Apoyo y Conversación'),
+        title: const Row(
+          children: [
+            AppLogo(size: 28),
+            SizedBox(width: 8),
+            Flexible(child: Text('Red de Apoyo y Conversación', overflow: TextOverflow.ellipsis)),
+          ],
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.sos_rounded, color: AppColors.sosRed),

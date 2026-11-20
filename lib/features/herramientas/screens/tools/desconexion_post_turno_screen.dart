@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/services/storage_service.dart';
+import '../../../../core/widgets/app_logo.dart';
 import '../../../sos/widgets/sos_modal_sheet.dart';
 
 class DesconexionPostTurnoScreen extends StatefulWidget {
@@ -76,7 +77,13 @@ class _DesconexionPostTurnoScreenState extends State<DesconexionPostTurnoScreen>
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Rutina de Desconexión Post-Turno'),
+        title: const Row(
+          children: [
+            AppLogo(size: 28),
+            SizedBox(width: 8),
+            Flexible(child: Text('Rutina de Desconexión Post-Turno', overflow: TextOverflow.ellipsis)),
+          ],
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.sos_rounded, color: AppColors.sosRed),

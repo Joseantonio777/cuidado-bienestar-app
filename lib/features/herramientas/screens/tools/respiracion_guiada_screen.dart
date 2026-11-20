@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/constants/app_strings.dart';
+import '../../../../core/widgets/app_logo.dart';
 import '../../../sos/widgets/sos_modal_sheet.dart';
 
 class RespiracionGuiadaScreen extends StatefulWidget {
@@ -116,7 +117,13 @@ class _RespiracionGuiadaScreenState extends State<RespiracionGuiadaScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Respiración Guiada'),
+        title: const Row(
+          children: [
+            AppLogo(size: 28),
+            SizedBox(width: 8),
+            Flexible(child: Text('Respiración Guiada', overflow: TextOverflow.ellipsis)),
+          ],
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.sos_rounded, color: AppColors.sosRed),
@@ -145,7 +152,7 @@ class _RespiracionGuiadaScreenState extends State<RespiracionGuiadaScreen>
                       selectedColor: AppColors.sereneBlue,
                       backgroundColor: Colors.transparent,
                       labelStyle: TextStyle(
-                        color: !_isBoxBreathing ? Colors.black : AppColors.textSecondary,
+                        color: !_isBoxBreathing ? Colors.white : AppColors.textSecondary,
                         fontWeight: FontWeight.bold,
                       ),
                       onSelected: _isRunning
@@ -164,7 +171,7 @@ class _RespiracionGuiadaScreenState extends State<RespiracionGuiadaScreen>
                       selectedColor: AppColors.emeraldGreen,
                       backgroundColor: Colors.transparent,
                       labelStyle: TextStyle(
-                        color: _isBoxBreathing ? Colors.black : AppColors.textSecondary,
+                        color: _isBoxBreathing ? Colors.white : AppColors.textSecondary,
                         fontWeight: FontWeight.bold,
                       ),
                       onSelected: _isRunning
@@ -258,7 +265,7 @@ class _RespiracionGuiadaScreenState extends State<RespiracionGuiadaScreen>
                 onPressed: _isRunning ? _stopBreathingCycle : _startBreathingCycle,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: _isRunning ? AppColors.sosRed : AppColors.sereneBlue,
-                  foregroundColor: _isRunning ? Colors.white : Colors.black,
+                  foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),

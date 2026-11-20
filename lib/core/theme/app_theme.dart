@@ -3,23 +3,21 @@ import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class AppTheme {
-  static ThemeData get darkTheme {
-    final baseTextTheme = ThemeData.dark().textTheme;
+  static ThemeData get lightTheme {
+    final baseTextTheme = ThemeData.light().textTheme;
 
     return ThemeData(
       useMaterial3: true,
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
       scaffoldBackgroundColor: AppColors.background,
-      colorScheme: const ColorScheme.dark(
+      colorScheme: const ColorScheme.light(
         primary: AppColors.sereneBlue,
         secondary: AppColors.emeraldGreen,
         surface: AppColors.surface,
-        background: AppColors.background,
         error: AppColors.sosRed,
-        onPrimary: Colors.black,
+        onPrimary: Colors.white,
         onSecondary: Colors.white,
         onSurface: AppColors.textPrimary,
-        onBackground: AppColors.textPrimary,
       ),
       textTheme: GoogleFonts.interTextTheme(baseTextTheme).copyWith(
         displayLarge: GoogleFonts.inter(
@@ -57,7 +55,9 @@ class AppTheme {
         ),
       ),
       appBarTheme: const AppBarTheme(
-        backgroundColor: AppColors.background,
+        backgroundColor: AppColors.surface,
+        foregroundColor: AppColors.textPrimary,
+        surfaceTintColor: Colors.transparent,
         elevation: 0,
         centerTitle: false,
         iconTheme: IconThemeData(color: AppColors.textPrimary, size: 24),
@@ -69,7 +69,9 @@ class AppTheme {
       ),
       cardTheme: CardTheme(
         color: AppColors.surface,
-        elevation: 2,
+        surfaceTintColor: Colors.transparent,
+        elevation: 1.5,
+        shadowColor: AppColors.sereneBlue.withOpacity(0.10),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
           side: const BorderSide(color: AppColors.surfaceLight, width: 1),
@@ -77,6 +79,8 @@ class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.sereneBlue,
+          foregroundColor: Colors.white,
           minimumSize: const Size(88, 48), // WCAG 48dp touch target minimum
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
           shape: RoundedRectangleBorder(
@@ -90,6 +94,7 @@ class AppTheme {
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
+          foregroundColor: AppColors.sereneBlue,
           minimumSize: const Size(88, 48),
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
           side: const BorderSide(color: AppColors.sereneBlue, width: 1.5),
@@ -119,4 +124,6 @@ class AppTheme {
       ),
     );
   }
+
+  static ThemeData get darkTheme => lightTheme;
 }

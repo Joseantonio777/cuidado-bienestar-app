@@ -134,7 +134,7 @@ class ResultDialog extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.sereneBlue,
-                      foregroundColor: Colors.black,
+                      foregroundColor: Colors.white,
                     ),
                     child: const Text('Aceptar y Finalizar'),
                   ),

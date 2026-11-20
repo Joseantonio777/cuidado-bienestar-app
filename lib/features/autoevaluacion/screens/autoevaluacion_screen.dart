@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../../core/services/storage_service.dart';
+import '../../../core/widgets/app_logo.dart';
 import '../models/question_model.dart';
 import '../models/assessment_result.dart';
 import '../widgets/question_card.dart';
@@ -81,7 +82,13 @@ class _AutoevaluacionScreenState extends State<AutoevaluacionScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('¿Cómo estoy hoy?'),
+        title: const Row(
+          children: [
+            AppLogo(size: 32),
+            SizedBox(width: 10),
+            Text('¿Cómo estoy hoy?'),
+          ],
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.history_rounded, color: AppColors.sereneBlue),
@@ -194,11 +201,11 @@ class _AutoevaluacionScreenState extends State<AutoevaluacionScreen> {
                 onPressed: _calculateAndShowResult,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.emeraldGreen,
-                  foregroundColor: Colors.black,
+                  foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(14),
                   ),
-                  elevation: 4,
+                  elevation: 3,
                 ),
                 icon: const Icon(Icons.analytics_outlined, size: 24),
                 label: const Text(
